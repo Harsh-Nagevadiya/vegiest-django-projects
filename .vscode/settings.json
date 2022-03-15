@@ -1,0 +1,27 @@
+{
+    "editor.wordWrap": "on",
+    "workbench.editor.enablePreview": false,
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingDelete": "always",
+    "editor.mouseWheelZoom": true,
+    "window.titleSeparator": "    -    ",
+    "python.testing.pytestArgs": [
+        "myapp"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "editor.minimap.maxColumn": 90,
+    "editor.mouseWheelScrollSensitivity": 3,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./myapp",
+        "-p",
+        "test*.py"
+    ],
+    "terminal.integrated.cursorStyle": "line",
+    "files.autoSave": "onFocusChange",
+    "git.ignoreLimitWarning": true,
+    "git.enabled": false,
+    "terminal.integrated.fontSize": 18
+}

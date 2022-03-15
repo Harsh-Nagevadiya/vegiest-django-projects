@@ -1,0 +1,439 @@
+{% extends 'seller_header.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+        <!-- title -->
+        <title>Home : Vegist</title>
+        
+    </head>
+    <body class="home-1">
+
+        <!--home page slider start-->
+        <section class="slider">
+            <div class="home-slider owl-carousel owl-theme">
+                <div class="items">
+                    <div class="img-back" style="background-image:url({% static 'image/slider1.jpg' %});">
+                        <div class="h-s-content slide-c-l">
+                            <span>Summer vage sale</span>
+                            <h1>Fresh fruits<br>&vegetable</h1>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="img-back" style="background-image:url({% static 'image/slider2.jpg' %});">
+                        <div class="h-s-content slide-c-r">
+                            <span>Organic indian masala</span>
+                            <h1>Prod of indian<br>100% pacaging</h1>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="img-back" style="background-image:url({% static 'image/slider3.jpg' %});">
+                        <div class="h-s-content slide-c-c">
+                            <span>Top selling!</span>
+                            <h1>Fresh for your health</h1>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--home page slider start-->
+        
+        <!-- Trending Products Start -->
+        <section class="h-t-products1 section-t-padding section-b-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="grid-4-product">
+                                <div class="grid-pro">
+                                    <ul class="grid-product text-center">
+
+                                        {% if product %}
+                                        
+                                        {% for i in product %}
+                                        <!-- product 1 -->
+                                        <li class="grid-items" style="padding-bottom: 70px;">
+                                            <div class="tred-pro">
+                                                <div class="tr-pro-img">
+                                                    
+                                                    <img class="img-fluid" src="{{i.product_image.url}}" alt="pro-img1">
+                                                
+                                                </div>
+                                                <div class="Pro-lable">
+                                                    <span class="p-text">New</span>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="caption">
+                                                <h3><a href="{% url 'product' %}">{{i.product_name}}</a></h3>
+                                                
+                                                <div class="pro-price">
+                                                    <span class="new-price">INR {{i.product_price}}/-</span>
+                                                </div>
+                                            </div>
+                                            <br/><br/>
+                                            <ul class="text-center">
+                                                <li>
+                                                    <a href="{% url 'seller_product_details' pk=i.pk %}" class="btn btn-style1"><i class="fa fa-info-circle"></i>&nbsp; Product Details</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <!-- end product 1 -->   
+                                        {% endfor %}
+                                    </ul>
+                                </div>  
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                    <section class="section-tb-padding">
+                        <h2 class="text-center">No Product Found</h2>
+                        <p class="text-center">Please Add Your Product</p>
+                        <br>
+                        <a href="{% url 'seller_add_product' %}" class="btn btn-style1">&nbsp; Add Product</a>
+                    </section>
+                {% endif %}
+            </div>
+        </section>
+        <!-- Trending Products end -->
+
+
+        <!-- Back-image and countdown star -->
+        <section class="home-countdown1">
+            <div class="back-img" style="background-image: url({% static 'image/dealbanner.jpg' %});">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="deal-content">
+                                <h2>Deal Of The Day!</h2>
+                                <span class="deal-c">We offer a hot deal offer every festival</span>
+                                <ul class="contdown_row">
+                                    <li class="countdown_section">
+                                        <span id="days" class="countdown_timer">254</span>
+                                        <span class="countdown_title">Days</span>
+                                    </li>
+                                    <li class="countdown_section">
+                                        <span id="hours" class="countdown_timer">11</span>
+                                        <span class="countdown_title">Hours</span>
+                                    </li>
+                                    <li class="countdown_section">
+                                        <span id="minutes" class="countdown_timer">33</span>
+                                        <span class="countdown_title">Minutes</span>
+                                    </li>
+                                    <li class="countdown_section">
+                                        <span id="seconds" class="countdown_timer">36</span>
+                                        <span class="countdown_title">Seconds</span>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Back image and countdown end -->
+        
+        <!-- quick veiw start -->
+        <section class="quick-view">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Product quickview</h5>
+                            <a href="javascript:void(0)" data-bs-dismiss="modal" aria-label="Close"><i class="ion-close-round"></i></a>
+                        </div>
+                        <div class="quick-veiw-area">
+                            <div class="quick-image">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="image-1">
+                                        <a href="javascript:void(0)" class="long-img">
+                                            <img src="{% static 'image/pro-page-image/pro-page-image.jpg' %}" class="img-fluid" alt="image">
+                                        </a>
+                                    </div>
+                                    <div class="tab-pane fade show" id="image-2">
+                                        <a href="javascript:void(0)" class="long-img">
+                                            <img src="{% static 'image/pro-page-image/prro-page-image01.jpg' %}" class="img-fluid" alt="image">
+                                        </a>
+                                    </div>
+                                    <div class="tab-pane fade show" id="image-3">
+                                        <a href="javascript:void(0)" class="long-img">
+                                            <img src="{% static 'image/pro-page-image/pro-page-image1-1.jpg' %}" class="img-fluid" alt="image">
+                                        </a>
+                                    </div>
+                                    <div class="tab-pane fade show" id="image-4">
+                                        <a href="javascript:void(0)" class="long-img">
+                                            <img src="{% static 'image/pro-page-image/pro-page-image1.jpg' %}" class="img-fluid" alt="image">
+                                        </a>
+                                    </div>
+                                    <div class="tab-pane fade show" id="image-5">
+                                        <a href="javascript:void(0)" class="long-img">
+                                            <img src="{% static 'image/pro-page-image/pro-page-image2.jpg' %}" class="img-fluid" alt="image">
+                                        </a>
+                                    </div>
+                                    <div class="tab-pane fade show" id="image-6">
+                                        <a href="javascript:void(0)" class="long-img">
+                                            <img src="{% static 'image/pro-page-image/pro-page-image2-2.jpg' %}" class="img-fluid" alt="image">
+                                        </a>
+                                    </div>
+                                    <div class="tab-pane fade show" id="image-7">
+                                        <a href="javascript:void(0)" class="long-img">
+                                            <img src="{% static 'image/pro-page-image/pro-page-image3.jpg' %}" class="img-fluid" alt="image">
+                                        </a>
+                                    </div>
+                                    <div class="tab-pane fade show" id="image-8">
+                                        <a href="javascript:void(0)" class="long-img">
+                                            <img src="{% static 'image/pro-page-image/pro-page-image03.jpg' %}" class="img-fluid" alt="image">
+                                        </a>
+                                    </div>
+                                </div>
+                                <ul class="nav nav-tabs quick-slider owl-carousel owl-theme">
+                                    <li class="nav-item items">
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#image-1"><img src="{% static 'image/pro-page-image/image1.jpg' %}" class="img-fluid" alt="image"></a>
+                                    </li>
+                                    <li class="nav-item items">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#image-2"><img src="{% static 'image/pro-page-image/image2.jpg' %}" class="img-fluid" alt="iamge"></a>
+                                    </li>
+                                    <li class="nav-item items">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#image-3"><img src="{% static 'image/pro-page-image/image3.jpg' %}" class="img-fluid" alt="image"></a>
+                                    </li>
+                                    <li class="nav-item items">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#image-4"><img src="{% static 'image/pro-page-image/image4.jpg' %}" class="img-fluid" alt="image"></a>
+                                    </li>
+                                    <li class="nav-item items">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#image-5"><img src="{% static 'image/pro-page-image/image5.jpg' %}" class="img-fluid" alt="image"></a>
+                                    </li>
+                                    <li class="nav-item items">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#image-6"><img src="{% static 'image/pro-page-image/image6.jpg' %}" class="img-fluid" alt="image"></a>
+                                    </li>
+                                    <li class="nav-item items">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#image-7"><img src="{% static 'image/pro-page-image/image8.jpg' %}" class="img-fluid" alt="image"></a>
+                                    </li>
+                                    <li class="nav-item items">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#image-8"><img src="{% static 'image/pro-page-image/image7.jpg' %}" class="img-fluid" alt="image"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="quick-caption">
+                                <h4>Fresh organic reachter</h4>
+                                <div class="quick-price">
+                                    <span class="new-price">$350.00 USD</span>
+                                    <span class="old-price"><del>$399.99 USD</del></span>
+                                </div>
+                                <div class="quick-rating">
+                                    <i class="fa fa-star c-star"></i>
+                                    <i class="fa fa-star c-star"></i>
+                                    <i class="fa fa-star c-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="pro-description">
+                                    <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p>
+                                </div>
+                                <div class="pro-size">
+                                    <label>Size: </label>
+                                    <select>
+                                        <option>1 ltr</option>
+                                        <option>3 ltr</option>
+                                        <option>5 ltr</option>
+                                    </select>
+                                </div>
+                                <div class="plus-minus">
+                                    <span>
+                                        <a href="javascript:void(0)" class="minus-btn text-black">-</a>
+                                        <input type="text" name="name" value="1">
+                                        <a href="javascript:void(0)" class="plus-btn text-black">+</a>
+                                    </span>
+                                    <a href="cart.html" class="quick-cart"><i class="fa fa-shopping-bag"></i></a>
+                                    <a href="wishlist.html" class="quick-wishlist"><i class="fa fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- quick veiw end -->
+        
+        <!-- brand logo start -->
+        <section class="section-tb-padding home-brand1">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="brand-carousel owl-carousel owl theme">
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l1.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l2.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l3.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l4.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l5.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l6.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l7.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l8.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- brand logo end -->
+
+              <!-- footer start -->
+              <section class="footer-one section-tb-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="f-logo">
+                                <ul class="footer-ul">
+                                    <li class="footer-li footer-logo">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{% static 'image/logo1.png' %}" alt="">
+                                        </a>
+                                    </li>
+                                    <li class="footer-li footer-address">
+                                        <ul class="f-ul-li-ul">
+                                            <li class="footer-icon">
+                                                <i class="fa-solid fa-map fa-3x"></i>
+                                            </li>
+                                            <li class="footer-info">
+                                                <h6>Address</h6>
+                                                <span>401 Broadway 24th floor</span>
+                                                <span>Near ant mall cross road</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="footer-li footer-contact">
+                                        <ul class="f-ul-li-ul">
+                                            <li class="footer-icon">
+                                                <i class="fa-solid fa-phone fa-3x"></i>
+                                            </li>
+                                            <li class="footer-info">
+                                                <h6>Contact</h6>
+                                                <a href="tel:#">Phone: 1-800-222-000</a>
+                                                <a href="mailto:#">Email: demo@demo.com</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="footer-li footer-address">
+                                        <ul class="f-ul-li-ul">
+                                            <li class="footer-icon">
+                                                <i class="fa-solid fa-circle-question fa-3x"></i>
+                                            </li>
+                                            <li class="footer-info">
+                                                <h6>Help</h6>
+                                                <span>Lorem ipsum is simply</span>
+                                                <span>Dummy the printing</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- footer end -->
+        
+            <!-- footer copyright start -->
+            <section class="footer-copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <ul class="f-bottom">
+                                <li class="f-c f-copyright">
+                                    <p>Copyright <i class="fa fa-copyright"></i> 2021 spacingtech</p>
+                                </li>
+                                <li class="f-c f-social">
+                                    
+                                </li>
+                                <li class="f-c f-payment">
+                                    <img src="{% static 'image/payment.png' %}" class="img-fluid" alt="payment image">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- footer copyright end -->
+
+     
+        <!-- back to top start -->
+        <a href="javascript:void(0)" class="scroll" id="top">
+            <span><i class="fa fa-angle-double-up"></i></span>
+        </a>
+        <!-- back to top end -->
+        <div class="mm-fullscreen-bg"></div>
+        <!-- jquery -->
+        <script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>
+        <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+        <!-- bootstrap -->
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <!-- popper -->
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <!-- fontawesome -->
+        <script src="{% static 'js/fontawesome.min.js' %}"></script>
+        <!-- owl carousal -->
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <!-- swiper -->
+        <script src="{% static 'js/swiper.min.js' %}"></script>
+        <!-- custom -->
+        <script src="{% static 'js/custom.js' %}"></script>
+    </body>
+</html>
+{% endblock %}

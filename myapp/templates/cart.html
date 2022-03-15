@@ -1,0 +1,242 @@
+{% extends 'index1.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+       
+        <!-- title -->
+        <title>Cart :: Vegiest</title>
+    
+    </head>
+    <body class="home-1">
+      
+        <!-- breadcrumb start -->
+        <section class="about-breadcrumb">
+            <div class="about-back section-tb-padding" style="background-image: url({% static 'image/about-image.jpg' %})">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="about-l">
+                                <ul class="about-link">
+                                    <li class="go-home"><a href="/">Home</a></li>
+                                    <li class="about-p"><span>Cart</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb end -->
+        {% if cart %}
+        <!-- cart start -->
+        <section class="cart-page section-tb-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                        <div class="cart-area">
+                            <div class="cart-details">
+                                
+                                <div class="cart-item">
+                                    <span class="cart-head">My cart</span>
+                                    <span class="cart-head">Total Price</span>
+                                </div>
+                                
+                                {% for i in cart %}
+                                <div class="cart-all-pro">
+                                    <div class="cart-pro">
+                                        <div class="cart-pro-image">
+                                            <img style="width:90px; height:auto;" src="{{i.product.product_image.url}}" class="img-fluid" alt="image">
+                                        </div>
+                                        <div class="pro-details">
+                                            <h4>{{i.product.product_name}}</h4><br/>
+                                            <span class="cart-desc" style="font-size: 17px;">INR {{i.product.product_price}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="qty-item">
+                                        <div class="center">
+                                            <div class="plus-minus">
+                                                <form name="change_qty" method="post" action="{% url 'change_qty' %}">
+                                                    {% csrf_token %}
+                                                    <span>
+                                                        <input type="hidden" name="id" value="{{i.pk}}">
+
+                                                        <!-- <a href="javascript:void(0)" class="minus-btn text-black">-</a> -->
+                                                            <input type="number" name="product_qty" onchange="this.form.submit()" value="{{i.product_qty}}">
+                                                        <!-- <a href="javascript:void(0)" class="plus-btn text-black">+</a> -->
+                                                    </span>
+                                                </form>
+                                            </div>
+                                            <a href="{% url 'remove_from_cart' pk=i.product.pk %}" class="pro-remove">Remove</a>
+                                        </div>
+                                    </div>
+                                    <div class="all-pro-price">
+                                        <span>INR {{i.total_price}}</span>
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                        
+                        <div class="cart-area">
+                            <div class="cart-details">
+                                
+                                <div class="other-link">
+                                    <ul class="c-link">
+                                        <li class="cart-other-link"><a href="#">Update cart</a></li>
+                                        <li class="cart-other-link"><a href="{% url 'product_gridlist' %}">Continue shopping</a></li>
+                                        <li class="cart-other-link"><a href="#">Clear cart</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                        <div class="cart-total">
+                            <div class="cart-price">
+                                <span>Subtotal</span>
+                                <span class="total">INR {{subtotal}}</span>
+                            </div>
+                            <div class="cart-price">
+                                <span>Shipping Charges</span>
+                                <span class="total">{{shipping}}</span>                                
+                            </div>
+                            <div class="cart-desc pt-3">
+                                <label>Coupon Code</label>
+                                <br/><br/>
+                                <form class="tect-center" method="post" action="">
+                                    <input type="hidden" name="coupon_code">
+                                    <!-- <input type="text" name="coupon" placeholder="Enter Coupon Code"><br/><br/>
+                                    <a href="#" class="btn btn-style1"><i class="fa fa-tag"></i>&nbsp; Apply Couponcode</a> -->
+                                </form>
+                            </div>
+                            <div class="shop-total">
+                                <span>Total Amount</span>
+                                <span class="total-amount">INR {{netprice}}</span>
+                            </div>
+                            <br>
+                            <form name="checkout" method="post" action="{% url 'pay' %}">{% csrf_token %}
+                                <input type="hidden" name="amount" value="{{netprice}}">
+                                <input type="submit" name="action" value="Checkout" class="btn btn-style1">
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- cart end -->
+        {% else %}
+            <section class="section-tb-padding text-center">
+                <h4 class="text-center">Empty Cart</h4><br>
+                <a href="{% url 'product_gridlist' %}" class="btn btn-style1">Continue Shopping</a>
+            </section>
+        {% endif %}
+                
+       <!-- footer start -->
+    <section class="footer-one section-tb-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="f-logo">
+                        <ul class="footer-ul">
+                            <li class="footer-li footer-logo">
+                                <a href="#">
+                                    <img class="img-fluid" src="{% static 'image/logo1.png' %}" alt="">
+                                </a>
+                            </li>
+                            <li class="footer-li footer-address">
+                                <ul class="f-ul-li-ul">
+                                    <li class="footer-icon">
+                                        <i class="fa-solid fa-map fa-3x"></i>
+                                    </li>
+                                    <li class="footer-info">
+                                        <h6>Address</h6>
+                                        <span>401 Broadway 24th floor</span>
+                                        <span>Near ant mall cross road</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer-li footer-contact">
+                                <ul class="f-ul-li-ul">
+                                    <li class="footer-icon">
+                                        <i class="fa-solid fa-phone fa-3x"></i>
+                                    </li>
+                                    <li class="footer-info">
+                                        <h6>Contact</h6>
+                                        <a href="tel:#">Phone: 1-800-222-000</a>
+                                        <a href="mailto:#">Email: demo@demo.com</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer-li footer-address">
+                                <ul class="f-ul-li-ul">
+                                    <li class="footer-icon">
+                                        <i class="fa-solid fa-circle-question fa-3x"></i>
+                                    </li>
+                                    <li class="footer-info">
+                                        <h6>Help</h6>
+                                        <span>Lorem ipsum is simply</span>
+                                        <span>Dummy the printing</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer end -->
+   
+    <!-- footer copyright start -->
+    <section class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul class="f-bottom">
+                        <li class="f-c f-copyright">
+                            <p>Copyright <i class="fa fa-copyright"></i> 2021 spacingtech</p>
+                        </li>
+                        <li class="f-c f-social">
+                            
+                        </li>
+                        <li class="f-c f-payment">
+                            <img src="{% static 'image/payment.png' %}" class="img-fluid" alt="payment image">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer copyright end -->
+
+
+        <!-- back to top start -->
+        <a href="javascript:void(0)" class="scroll" id="top">
+            <span><i class="fa fa-angle-double-up"></i></span>
+        </a>
+        <!-- back to top end -->
+        <div class="mm-fullscreen-bg"></div>
+        <!-- jquery -->
+        <script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>
+        <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+        <!-- bootstrap -->
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <!-- popper -->
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <!-- fontawesome -->
+        <script src="{% static 'js/fontawesome.min.js' %}"></script>
+        <!-- owl carousal -->
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <!-- swiper -->
+        <script src="{% static 'js/swiper.min.js' %}"></script>
+        <!-- custom -->
+        <script src="{% static 'js/custom.js' %}"></script>
+    </body>
+</html>
+{% endblock %}

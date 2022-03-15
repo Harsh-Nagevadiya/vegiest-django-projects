@@ -1,0 +1,473 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+        <meta name="author" content="">
+        <!-- favicon -->
+        <link rel="shortcut icon" type="image/favicon" href="{% static 'image/fevicon.png' %}">
+        <!-- bootstrap -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+        <!-- simple-line icon -->
+        <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/simple-line-icons.css' %}"> -->
+        <!-- font-awesome icon -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+        <!-- themify icon -->
+        <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/themify-icons.css' %}"> -->
+        <!-- ion icon -->
+        <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/ionicons.min.css' %}"> -->
+        <!-- owl slider -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.default.min.css' %}">
+        <!-- swiper -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/swiper.min.css' %}">
+        <!-- animation -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+        <!-- style -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}">
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script>
+            if ( window.history.replaceState ) {
+                window.history.replaceState( null, null, window.location.href );
+            }
+        </script>
+
+        <script type="text/javascript">
+            function preventBack() {
+                window.history.forward(); 
+            }
+              
+            setTimeout("preventBack()", 0);
+              
+            window.onunload = function () { null };
+        </script>
+    
+    </head>
+    <body class="home-1" oncontextmenu="return false">
+        <!-- top notificationbar start -->
+        <section class="top1">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <ul class="top-home">
+                            <li class="top-home-li">
+                                <!-- currency start -->
+                                <div class="currency">
+                                    <span class="currency-head">currency:</span>
+                                    <div class="currency-drop">
+                                        <div class="eur">
+                                            <img class="img-fluid" src="{% static 'image/c-icon1.png' %}" alt="">
+                                            <span class="cur-name">EUR <i class="fa-solid fa-caret-down"></i></span>
+                                        </div>
+                                        <ul class="all-currency">
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img class="img-fluid" src="{% static 'image/c-icon4.png' %}" alt="">
+                                                    <span class="cur-name">AFN</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img class="img-fluid" src="{% static 'image/c-icon2.png' %}" alt="">
+                                                    <span class="cur-name">BDT</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img class="img-fluid" src="{% static 'image/c-icon3.png' %}" alt="">
+                                                    <span class="cur-name">CAD</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img class="img-fluid" src="{% static 'image/c-icon1.png' %}" alt="">
+                                                    <span class="cur-name">EUR</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img class="img-fluid" src="{% static 'image/c-icon5.png' %}" alt="">
+                                                    <span class="cur-name">GBP</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img class="img-fluid" src="{% static 'image/c-icon6.png' %}" alt="">
+                                                    <span class="cur-name">INR</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img class="img-fluid" src="{% static 'image/c-icon7.png' %}" alt="">
+                                                    <span class="cur-name">SAR</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img class="img-fluid" src="{% static 'image/c-icon8.png' %}" alt="">
+                                                    <span class="cur-name">USD</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- currency end -->
+                             
+                            </li>
+                            <li class="top-home-li t-content">
+                                <!-- offer text start -->
+                                <div class="top-content">
+                                    <p class="top-slogn"><span class="top-c">free shipping</span> orders from all item</p>
+                                </div>
+                                <!-- offer text end -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- top notificationbar end -->
+        
+        <!-- header start -->
+        <header class="header-area">
+            <div class="header-main-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="header-main">
+                                <!-- logo start -->
+                                <div class="header-element logo">
+                                    <a>
+                                        <img src="{% static 'image/logo1.png' %}" alt="logo-image" class="img-fluid">
+                                    </a>
+                                </div>
+                                <!-- logo end -->
+                               
+                                
+                                <!-- header-icon start -->
+                                <div class="header-element right-block-box">
+                                    <ul class="shop-element">
+                                        <li class="side-wrap nav-toggler">
+                                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+                                            <span class="line"></span>
+                                            </button>
+                                        </li>
+                                        <li class="side-wrap user-wrap">
+                                            <div class="acc-desk">
+                                                <div class="user-icon">
+                                                    <a href="#" class="user-icon-desk">
+                                                        <span><i class="icon-user"></i></span>
+                                                    </a>
+                                                </div>
+                                                <div class="user-info">
+                                                    <span class="acc-title">Account</span>
+                                                    {% if request.session.email %}
+                                                    <div class="account-login">
+                                                        <a href="{% url 'logout' %}">Logout ({{request.session.fname}})</a>
+                                                    </div>
+                                                    <div class="account-login">
+                                                        <a href="{% url 'change_password' %}">Change Password ({{request.session.fname}})</a>
+                                                    </div>
+                                                    <div class="account-login">
+                                                        <a href="{% url 'orderhistory' %}">My Orders</a>
+                                                    </div>
+                                                    {% else %}
+                                                    <div class="account-login">
+                                                        <a href="{% url 'register' %}">Register</a>
+                                                        <a href="{% url 'login' %}">Log in</a>
+                                                    </div>
+                                                    {% endif %}
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="acc-mob">
+                                                <a href="{% url 'login' %}" class="user-icon">
+                                                    <span><i class="icon-user"></i></span>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        {% if request.session.email %}
+                                        <li class="side-wrap cart-wrap">
+                                            <div class="shopping-widget">
+                                                <div class="shopping-cart">
+                                                    <a href="{% url 'cart' %}" class="cart-count">
+                                                        <span class="cart-icon-wrap">
+                                                            <span class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                                                            <span id="cart-total" class="bigcounter">{{request.session.cart_count}}</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="side-wrap wishlist-wrap">
+                                            <a href="{% url 'wishlist' %}" class="header-wishlist">
+                                                <span class="wishlist-icon"><i class="fa-solid fa-heart"></i></span>
+                                                <span class="wishlist-counter">
+                                                    {% if request.session.wishlist_count != 0 %} 
+                                                        {{request.session.wishlist_count}}
+                                                    {% endif %}
+                                            </span>
+                                            </a>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                                <!-- header-icon end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="main-menu-area">
+                                    <div class="main-navigation navbar-expand-xl">
+                                        <div class="box-header menu-close">
+                                            <button class="close-box" type="button"><i class="fa-solid fa-xmark"></i></button>
+                                        </div>
+                                        <!-- menu start -->
+                                        <div class="navbar-collapse" id="navbarContent">
+                                            <div class="megamenu-content">
+                                                <div class="mainwrap">
+                                                    <ul class="main-menu">
+                                                        <li class="menu-link parent">
+                                                            <a href="/" class="link-title">
+                                                                <span class="sp-link-title">Home</span>
+                                                            </a>
+                                                                                                                        
+                                                        </li>
+                                                        <li class="menu-link parent">
+                                                            <a href="{% url 'aboutus' %}" class="link-title">
+                                                                <span class="sp-link-title">About Us</span>
+                                                            </a>
+                                                            
+                                                        </li>
+                                                        <li class="menu-link parent">
+                                                            <a href="{% url 'product_gridlist' %}" class="link-title">
+                                                                <span class="sp-link-title">Shop</span>&nbsp;&nbsp;
+                                                                <i class="fa fa-angle-down"></i>
+                                                            </a>
+                                                            <a href="#collapse-mega-menu" data-bs-toggle="collapse" class="link-title link-title-lg">
+                                                                <span class="sp-link-title">Shop</span>
+                                                                <i class="fa fa-angle-down"></i>
+                                                            </a>
+                                                            {% if request.session.email %}
+                                                            <ul class="dropdown-submenu sub-menu collapse" id="collapse-page-menu">
+                                                                <li class="submenu-li">
+                                                                    <a href="{% url 'wishlist' %}" class="submenu-link">
+                                                                        Wishlist 
+                                                                        {% if request.session.wishlist_count != 0 %} 
+                                                                            ({{request.session.wishlist_count}})
+                                                                        {% endif %}
+                                                                    </a>
+                                                                </li>
+                                                                <li class="submenu-li">
+                                                                    <a href="{% url 'cart' %}" class="submenu-link">
+                                                                        Cart
+                                                                        {% if request.session.cart_count != 0 %} 
+                                                                            ({{request.session.cart_count}})
+                                                                        {% endif %}
+                                                                    </a>
+                                                                </li>
+                                                                
+                                                            </ul>
+                                                            {% endif %}
+                                                        </li>
+                                                                                                                
+                                                        <li class="menu-link parent">
+                                                            <a href="{% url 'blog' %}" class="link-title">
+                                                                <span class="sp-link-title">Blogs</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-link parent">
+                                                            <a href="{% url 'contact' %}" class="link-title">
+                                                                <span class="sp-link-title">Contact Us</span>
+                                                            </a>
+                                                        </li>   
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- menu end -->
+                                        <div class="img-hotline">
+                                            <div class="image-line">
+                                                <a href="javascript:void(0)"><img src="{% static 'image/icon_contact.png' %}" class="img-fluid" alt="image-icon"></a>
+                                            </div>
+                                            <div class="image-content">
+                                                <span class="hot-l">Hotline:</span>
+                                                <span>0123 456 789</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </header>
+        <!-- header end -->
+
+        <!-- mobile menu start -->
+        <div class="header-bottom-area mobile">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="main-menu-area">
+                            <div class="main-navigation navbar-expand-xl">
+                                <div class="box-header menu-close">
+                                    <button class="close-box" type="button"><i class="fa-solid fa-xmark"></i></button>
+                                </div>
+                                <!-- menu start -->
+                                <div class="navbar-collapse" id="navbarContent01">
+                                    <div class="megamenu-content">
+                                        <div class="mainwrap">
+                                            <ul class="main-menu">
+                                                
+                                                <li class="menu-link parent">
+                                                    <a href="/" class="link-title">
+                                                        <span class="sp-link-title">Home</span>
+                                                    </a>
+                                                    <a href="/" class="link-title link-title-lg">
+                                                        <span class="sp-link-title">Home</span>
+                                                    </a>
+                                                </li>
+                                                
+                                                <li class="menu-link parent">
+                                                    <a href="{% url 'aboutus' %}" class="link-title link-title-lg">
+                                                        <span class="sp-link-title">About Us</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="menu-link parent">
+                                                    
+                                                    <a href="{javascript:void(0)}" class="link-title">
+                                                        <span class="sp-link-title">Shop</span>
+                                                        <i class="fa fa-angle-down"></i>
+                                                    </a>
+                                                    <a href="#collapse-mega-menu1" data-bs-toggle="collapse" class="link-title link-title-lg">
+                                                        <span class="sp-link-title">Shop</span>
+                                                        <i class="fa fa-angle-down"></i>
+                                                    </a>
+
+                                                    <ul class="dropdown-submenu mega-menu collapse" id="collapse-mega-menu1">
+                                                        
+                                                        <li class="menu-link parent">
+                                                            <a href="{% url 'product_gridlist' %}" class="link-title link-title-lg">
+                                                                <span class="sp-link-title">Shop</span>
+                                                            </a>
+                                                        </li>
+                                                        {% if request.session.email %}
+                                                        <li class="menu-link parent">
+                                                            <a href="{% url 'cart' %}" class="link-title link-title-lg">
+                                                                <span class="sp-link-title">Cart {% if request.session.cart_count != 0 %} 
+                                                                    ({{request.session.cart_count}})
+                                                                {% endif %}</span>
+                                                            </a>
+                                                        </li>
+
+                                                        <li class="menu-link parent">
+                                                            <a href="{% url 'wishlist' %}" class="link-title link-title-lg">
+                                                                <span class="sp-link-title">Wishlist {% if request.session.wishlist_count != 0 %} 
+                                                                    ({{request.session.wishlist_count}})
+                                                                {% endif %}</span>
+                                                            </a>
+                                                        </li>
+                                                        {% endif %}
+                                                    </ul>
+                                                </li>
+                                                
+                                                <li class="menu-link parent">
+                                                    <a href="{% url 'blog' %}" class="link-title link-title-lg">
+                                                        <span class="sp-link-title">Blogs</span>
+                                                    </a>
+                                                </li>
+                                                
+                                                <li class="menu-link parent">
+                                                    <a href="{% url 'contact' %}" class="link-title link-title-lg">
+                                                        <span class="sp-link-title">Contact Us</span>
+                                                    </a>
+                                                </li>
+
+                                                {% if request.session.email %}
+
+                                                <li class="text-center"><br>
+                                                    <a href="{% url 'logout' %}" class="btn btn-style3 link-title-lg">
+                                                        <span class="sp-link-title">Logout ({{request.session.fname}})</span>
+                                                    </a><br><br>
+                                                    <a href="{% url 'change_password' %}" class="btn btn-style3 link-title-lg">
+                                                        <span class="sp-link-title">Change Password ({{request.session.fname}})</span>
+                                                    </a>
+                                                </li>
+
+                                                
+                                                <li class="text-center"><br>
+                                                    <a href="{% url 'orderhistory' %}" class="btn btn-style3 link-title-lg">
+                                                        <span class="sp-link-title">My Orders</span>
+                                                    </a>
+                                                </li>
+                                                {% else %}
+                                                <li class="text-center"><br>
+                                                    &nbsp;&nbsp;<a href="{% url 'register' %}" class="btn btn-style3 link-title-lg">
+                                                        <span class="sp-link-title">Register</span>
+                                                    </a>
+                                                    <a href="{% url 'login' %}" class="btn btn-style3 link-title-lg">
+                                                        <span class="sp-link-title">Login</span>
+                                                    </a>
+                                                </li>
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- menu end -->
+                                <div class="img-hotline">
+                                    <div class="image-line">
+                                        <a href="javascript:void(0)"><img src="{% static 'image/icon_contact.png' %}" class="img-fluid" alt="image-icon"></a>
+                                    </div>
+                                    <div class="image-content">
+                                        <span class="hot-l">Hotline:</span>
+                                        <span>0123 456 789</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu end -->
+
+        {% block content %}
+        {% endblock %}
+
+        <div class="mm-fullscreen-bg"></div>
+        <!-- jquery -->
+        <script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>
+        <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+        <!-- bootstrap -->
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <!-- popper -->
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <!-- fontawesome -->
+        <script src="{% static 'js/all.js' %}"></script>
+        <!-- owl carousal -->
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <!-- swiper -->
+        <script src="{% static 'js/swiper.min.js' %}"></script>
+        <!-- custom -->
+        <script src="{% static 'js/custom.js' %}"></script>
+
+    </body>
+</html>

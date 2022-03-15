@@ -1,0 +1,69 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<head>
+    <title>Callback</title>
+</head>
+<body class="home-1">
+    <!-- breadcrumb start -->
+    <section class="about-breadcrumb">
+        <div class="about-back section-tb-padding" style="background-image: url({% static 'image/about-image.jpg' %})">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="about-l">
+                            <ul class="about-link">
+                                <li class="go-home"><a href="/">Home</a></li>
+                                <li class="about-p"><span>order complete</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb end -->
+
+    <!-- Order complete start -->
+    <section class="section-tb-padding text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="order-area">
+                        <div class="order-details">
+                            <span class="text-success order-i"><i class="fa fa-check-circle"></i></span>
+                            <h4>Thank you for order</h4>
+
+                            <h5>Callback Messsage: </h5>                    <br>
+                            <h5> Checksum Verification: {{ message }} </h5> <br>
+                            MID: {{ MID }}                                  <br>
+                            TXNID: {{ TXNID }}                              <br>
+                            ORDERID: {{ ORDERID }}                          <br>
+                            BANKTXNID: {{ BANKTXNID }}                      <br>
+                            TXNAMOUNT:                       <br>
+                            CURRENCY: {{ CURRENCY }}                        <br><br>
+                            <h5> STATUS: {{ STATUS }} </h5>                 <br>
+                            RESPCODE: {{ RESPCODE }}                        <br>
+                            RESPMSG: {{ RESPMSG }}                          <br>
+                            TXNDATE: {{ TXNDATE }}                          <br>
+                            GATEWAYNAME: {{ GATEWAYNAME }}                  <br>
+                            BANKNAME: {{ BANKNAME }}                        <br>
+                            BIN_NAME: {{ BIN_NAME }}                        <br>
+                            PAYMENTMODE: {{ PAYMENTMODE }}                  <br>
+                            CHECKSUMHASH: {{ CHECKSUMHASH }}                <br>
+                            <br/><br/>
+                                <h3 class="text-center btn btn-style1"><a href="{% url 'cart' %}">Back to Cart</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Order complete end -->
+
+</body>
+</html>
+
+{% endblock %}

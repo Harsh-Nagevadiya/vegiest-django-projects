@@ -1,0 +1,252 @@
+{% extends 'seller_header.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+        <!-- title -->
+        <title>View Product : Vegist</title>
+    </head>
+    <body class="home-1">
+        <!-- breadcrumb start -->
+        <section class="about-breadcrumb">
+            <div class="about-back section-tb-padding" style="background-image: url({% static 'image/about-image.jpg' %})">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="about-l">
+                                <ul class="about-link">
+                                    <li class="go-home"><a href="{% url 'seller_index' %}">Home</a></li>
+                                    <li class="about-p"><span>View Product</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb end -->
+        
+        <!-- Start Product List -->
+        <section class="section-tb-padding">
+            <div class="container">
+                <div class="row">
+                    <!-- start col-lg-12 --> 
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="grid-4-product">
+                            <div class="grid-pro">
+                                <ul class="grid-product">
+                                    
+                                    {% for i in product %}
+                                    <!-- product 1 -->
+                                    <li class="grid-items" style="padding-bottom: 70px;">
+                                        <div class="tred-pro">
+                                            <div class="tr-pro-img">
+                                                <a href="#">
+                                                    <img class="img-fluid" src="{{i.product_image.url}}" alt="pro-img1">
+                                                </a>
+                                            </div>
+                                            <div class="Pro-lable">
+                                                <span class="p-text">New</span>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="caption">
+                                            <h3><a href="{% url 'product' %}">{{i.product_name}}</a></h3>
+                                            
+                                            <div class="pro-price">
+                                                <span class="new-price">INR {{i.product_price}}/-</span>
+                                            </div>
+                                        </div>
+                                        <br/><br/>
+                                        <ul class="text-center">
+                                            <li>
+                                                <a href="{% url 'seller_product_details' pk=i.pk %}" class="btn btn-style1"><i class="fa fa-info-circle"></i>&nbsp; Product Details</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- end product 1 -->   
+                                    {% endfor %}
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <!-- End Product List -->
+
+        <!-- brand logo start -->
+        <section class="section-tb-padding home-brand1">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="brand-carousel owl-carousel owl theme">
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l1.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l2.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l3.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l4.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l5.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l6.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l7.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <div class="brand-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{% static 'image/brand/home-123/l8.png' %}" alt="home brand" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- brand logo end -->
+        
+      <!-- footer start -->
+    <section class="footer-one section-tb-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="f-logo">
+                        <ul class="footer-ul">
+                            <li class="footer-li footer-logo">
+                                <a href="#">
+                                    <img class="img-fluid" src="{% static 'image/logo1.png' %}" alt="">
+                                </a>
+                            </li>
+                            <li class="footer-li footer-address">
+                                <ul class="f-ul-li-ul">
+                                    <li class="footer-icon">
+                                        <i class="fa-solid fa-map fa-3x"></i>
+                                    </li>
+                                    <li class="footer-info">
+                                        <h6>Address</h6>
+                                        <span>401 Broadway 24th floor</span>
+                                        <span>Near ant mall cross road</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer-li footer-contact">
+                                <ul class="f-ul-li-ul">
+                                    <li class="footer-icon">
+                                        <i class="fa-solid fa-phone fa-3x"></i>
+                                    </li>
+                                    <li class="footer-info">
+                                        <h6>Contact</h6>
+                                        <a href="tel:#">Phone: 1-800-222-000</a>
+                                        <a href="mailto:#">Email: demo@demo.com</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer-li footer-address">
+                                <ul class="f-ul-li-ul">
+                                    <li class="footer-icon">
+                                        <i class="fa-solid fa-circle-question fa-3x"></i>
+                                    </li>
+                                    <li class="footer-info">
+                                        <h6>Help</h6>
+                                        <span>Lorem ipsum is simply</span>
+                                        <span>Dummy the printing</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer end -->
+   
+    <!-- footer copyright start -->
+    <section class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul class="f-bottom">
+                        <li class="f-c f-copyright">
+                            <p>Copyright <i class="fa fa-copyright"></i> 2021 spacingtech</p>
+                        </li>
+                        <li class="f-c f-social">
+                            
+                        </li>
+                        <li class="f-c f-payment">
+                            <img src="{% static 'image/payment.png' %}" class="img-fluid" alt="payment image">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer copyright end -->
+        
+        <!-- back to top start -->
+        <a href="javascript:void(0)" class="scroll" id="top">
+            <span><i class="fa fa-angle-double-up"></i></span>
+        </a>
+        <!-- back to top end -->
+        <div class="mm-fullscreen-bg"></div>
+        <!-- jquery -->
+        <script src="js/modernizr-2.8.3.min.js"></script>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <!-- bootstrap -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- popper -->
+        <script src="js/popper.min.js"></script>
+        <!-- fontawesome -->
+        <script src="js/fontawesome.min.js"></script>
+        <!-- owl carousal -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- swiper -->
+        <script src="js/swiper.min.js"></script>
+        <!-- custom -->
+        <script src="js/custom.js"></script>
+    </body>
+</html>
+{% endblock %}

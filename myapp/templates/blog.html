@@ -1,0 +1,327 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+        
+        <!-- title -->
+        <title>Blog : Vegist</title>
+        
+    </head>
+    <body class="home-1">
+        
+        <!-- breadcrumb start -->
+        <section class="about-breadcrumb">
+            <div class="about-back section-tb-padding" style="background-image: url({% static 'image/about-image.jpg' %})">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="about-l">
+                                <ul class="about-link">
+                                    <li class="go-home"><a href="/">Home</a></li>
+                                    <li class="about-p"><span>News</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb end -->
+        <!-- blog start -->
+        <section class="section-tb-padding blog-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="blog-style-1-list">
+                            <div class="blog-start">
+                                <div class="blog-post">
+                                    <div class="blog-image">
+                                        <a href="{% url 'blogdetails' %}">
+                                            <img src="{% static 'image/blog-image/blog-1.jpg' %}" alt="blog-image" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="blog-content">
+                                        <div class="blog-title">
+                                            <h6><a href="{% url 'blogdetails' %}">Green onion knife and salad plased</a></h6>
+                                        </div>
+                                        <div class="date-comm-adit">
+                                            <span class="blog-date"><i class="ti-calendar"></i> 1 Jan 2021</span>
+                                            <a href="javascript:void(0)"><i class="ti-comment-alt"></i> 1 Comment</a>
+                                            <span class="blog-admin"><i class="ti-user"></i> By <span class="blog-editor">Andrew louise</span></span>
+                                        </div>
+                                        <p class="blog-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor...</p>
+                                        <a href="{% url 'blogdetails' %}" class="read-link">
+                                            <span>Read more</span>
+                                            <i class="ti-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-start">
+                                <div class="blog-post">
+                                    <div class="blog-image">
+                                        <a href="{% url 'blogdetails' %}">
+                                            <img src="{% static 'image/blog-image/blog-2.jpg' %}" alt="blog-image" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="blog-content">
+                                        <div class="blog-title">
+                                            <h6><a href="{% url 'blogdetails' %}">All time fresh every time healthy</a></h6>
+                                        </div>
+                                        <div class="date-comm-adit">
+                                            <span class="blog-date"><i class="ti-calendar"></i> 5 Jan 2021</span>
+                                            <a href="javascript:void(0)"><i class="ti-comment-alt"></i> 0 Comment</a>
+                                            <span class="blog-admin"><i class="ti-user"></i> By <span class="blog-editor">Andrew louise</span></span>
+                                        </div>
+                                        <p class="blog-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor...</p>
+                                        <a href="{% url 'blogdetails' %}" class="read-link">
+                                            <span>Read more</span>
+                                            <i class="ti-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-start">
+                                <div class="blog-post">
+                                    <div class="blog-image">
+                                        <a href="{% url 'blogdetails' %}">
+                                            <img src="{% static 'image/blog-image/blog-3.jpg' %}" alt="blog-image" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="blog-content">
+                                        <div class="blog-title">
+                                            <h6><a href="{% url 'blogdetails' %}">Vegist special liquide fresh vagi</a></h6>
+                                        </div>
+                                        <div class="date-comm-adit">
+                                            <span class="blog-date"><i class="ti-calendar"></i> 7 Jan 2021</span>
+                                            <a href="javascript:void(0)"><i class="ti-comment-alt"></i> 0 Comment</a>
+                                            <span class="blog-admin"><i class="ti-user"></i> By <span class="blog-editor">Andrew louise</span></span>
+                                        </div>
+                                        <p class="blog-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor...</p>
+                                        <a href="{% url 'blogdetails' %}" class="read-link">
+                                            <span>Read more</span>
+                                            <i class="ti-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-start">
+                                <div class="blog-post">
+                                    <div class="blog-image">
+                                        <a href="{% url 'blogdetails' %}">
+                                            <img src="{% static 'image/blog-image/blog-4.jpg' %}" alt="blog-image" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="blog-content">
+                                        <div class="blog-title">
+                                            <h6><a href="{% url 'blogdetails' %}">Organic mix masala fresh & soft</a></h6>
+                                        </div>
+                                        <div class="date-comm-adit">
+                                            <span class="blog-date"><i class="ti-calendar"></i> 9 Jan 2021</span>
+                                            <a href="javascript:void(0)"><i class="ti-comment-alt"></i> 3 Comment</a>
+                                            <span class="blog-admin"><i class="ti-user"></i> By <span class="blog-editor">Andrew louise</span></span>
+                                        </div>
+                                        <p class="blog-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor...</p>
+                                        <a href="{% url 'blogdetails' %}" class="read-link">
+                                            <span>Read more</span>
+                                            <i class="ti-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-start">
+                                <div class="blog-post">
+                                    <div class="blog-image">
+                                        <a href="{% url 'blogdetails' %}">
+                                            <img src="{% static 'image/blog-image/blog-5.jpg' %}" alt="blog-image" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="blog-content">
+                                        <div class="blog-title">
+                                            <h6><a href="{% url 'blogdetails' %}">Fresh organics brand and picnic</a></h6>
+                                        </div>
+                                        <div class="date-comm-adit">
+                                            <span class="blog-date"><i class="ti-calendar"></i> 10 Jan 2021</span>
+                                            <a href="javascript:void(0)"><i class="ti-comment-alt"></i> 2 Comment</a>
+                                            <span class="blog-admin"><i class="ti-user"></i> By <span class="blog-editor">Andrew louise</span></span>
+                                        </div>
+                                        <p class="blog-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor...</p>
+                                        <a href="{% url 'blogdetails' %}" class="read-link">
+                                            <span>Read more</span>
+                                            <i class="ti-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-start">
+                                <div class="blog-post">
+                                    <div class="blog-image">
+                                        <a href="{% url 'blogdetails' %}">
+                                            <img src="{% static 'image/blog-image/blog-6.jpg' %}" alt="blog-image" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="blog-content">
+                                        <div class="blog-title">
+                                            <h6><a href="{% url 'blogdetails' %}">Health and skin for your organic</a></h6>
+                                        </div>
+                                        <div class="date-comm-adit">
+                                            <span class="blog-date"><i class="ti-calendar"></i> 11 Jan 2021</span>
+                                            <a href="javascript:void(0)"><i class="ti-comment-alt"></i> 0 Comment</a>
+                                            <span class="blog-admin"><i class="ti-user"></i> By <span class="blog-editor">Andrew louise</span></span>
+                                        </div>
+                                        <p class="blog-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor...</p>
+                                        <a href="{% url 'blogdetails' %}" class="read-link">
+                                            <span>Read more</span>
+                                            <i class="ti-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-start">
+                                <div class="blog-post">
+                                    <div class="blog-image">
+                                        <a href="{% url 'blogdetails' %}">
+                                            <img src="{% static 'image/blog-image/blog-7.jpg' %}" alt="blog-image" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="blog-content">
+                                        <div class="blog-title">
+                                            <h6><a href="{% url 'blogdetails' %}">Vegist special liquide fresh vegetable</a></h6>
+                                        </div>
+                                        <div class="date-comm-adit">
+                                            <span class="blog-date"><i class="ti-calendar"></i> 15 Jan 2021</span>
+                                            <a href="javascript:void(0)"><i class="ti-comment-alt"></i> 1 Comment</a>
+                                            <span class="blog-admin"><i class="ti-user"></i> By <span class="blog-editor">Andrew louise</span></span>
+                                        </div>
+                                        <p class="blog-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli. Aenean commodo ligula eget dolor...</p>
+                                        <a href="{% url 'blogdetails' %}" class="read-link">
+                                            <span>Read more</span>
+                                            <i class="ti-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="all-page">
+                            <span class="page-title">Showing 1 - 5 of 6 result</span>
+                            <div class="page-number style-1">
+                                <a href="javascript:void(0)" class="active">1</a>
+                                <a href="javascript:void(0)">2</a>
+                                <a href="javascript:void(0)">3</a>
+                                <a href="javascript:void(0)">4</a>
+                                <a href="javascript:void(0)">5</a>
+                                <a href="javascript:void(0)"><i class="fa fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- blog end -->
+        
+       <!-- footer start -->
+    <section class="footer-one section-tb-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="f-logo">
+                        <ul class="footer-ul">
+                            <li class="footer-li footer-logo">
+                                <a href="#">
+                                    <img class="img-fluid" src="{% static 'image/logo1.png' %}" alt="">
+                                </a>
+                            </li>
+                            <li class="footer-li footer-address">
+                                <ul class="f-ul-li-ul">
+                                    <li class="footer-icon">
+                                        <i class="fa-solid fa-map fa-3x"></i>
+                                    </li>
+                                    <li class="footer-info">
+                                        <h6>Address</h6>
+                                        <span>401 Broadway 24th floor</span>
+                                        <span>Near ant mall cross road</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer-li footer-contact">
+                                <ul class="f-ul-li-ul">
+                                    <li class="footer-icon">
+                                        <i class="fa-solid fa-phone fa-3x"></i>
+                                    </li>
+                                    <li class="footer-info">
+                                        <h6>Contact</h6>
+                                        <a href="tel:#">Phone: 1-800-222-000</a>
+                                        <a href="mailto:#">Email: demo@demo.com</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer-li footer-address">
+                                <ul class="f-ul-li-ul">
+                                    <li class="footer-icon">
+                                        <i class="fa-solid fa-circle-question fa-3x"></i>
+                                    </li>
+                                    <li class="footer-info">
+                                        <h6>Help</h6>
+                                        <span>Lorem ipsum is simply</span>
+                                        <span>Dummy the printing</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer end -->
+   
+    <!-- footer copyright start -->
+    <section class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul class="f-bottom">
+                        <li class="f-c f-copyright">
+                            <p>Copyright <i class="fa fa-copyright"></i> 2021 spacingtech</p>
+                        </li>
+                        <li class="f-c f-social">
+                            
+                        </li>
+                        <li class="f-c f-payment">
+                            <img src="{% static 'image/payment.png' %}" class="img-fluid" alt="payment image">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer copyright end -->
+
+
+        <!-- back to top start -->
+        <a href="javascript:void(0)" class="scroll" id="top">
+            <span><i class="fa fa-angle-double-up"></i></span>
+        </a>
+        <!-- back to top end -->
+        <div class="mm-fullscreen-bg"></div>
+        <!-- jquery -->
+        <script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>
+        <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+        <!-- bootstrap -->
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <!-- popper -->
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <!-- fontawesome -->
+        <script src="{% static 'js/fontawesome.min.js' %}"></script>
+        <!-- owl carousal -->
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <!-- swiper -->
+        <script src="{% static 'js/swiper.min.js' %}"></script>
+        <!-- custom -->
+        <script src="{% static 'js/custom.js' %}"></script>
+    </body>
+</html>
+{% endblock %}

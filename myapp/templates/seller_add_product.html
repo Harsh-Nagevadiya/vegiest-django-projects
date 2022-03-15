@@ -1,0 +1,185 @@
+{% extends 'seller_header.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="utf-8">
+    
+    <!-- title -->
+    <title>Add Product : Vegiest</title>
+    
+</head>
+<body class="home-1">
+
+    <!-- breadcrumb start -->
+    <section class="about-breadcrumb">
+        <div class="about-back section-tb-padding" style="background-image: url({% static 'image/about-image.jpg' %})">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="about-l">
+                            <ul class="about-link">
+                                <li class="go-home"><a href="{% url 'seller_index' %}">Home</a></li>
+                                <li class="about-p"><span>Add Product</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb end -->
+    <!-- order history start -->
+    <section class="order-histry-area section-tb-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="order-history">
+                        <div class="profile-address">
+                            <div class="error">
+                                {% if msg %}
+                                    {{msg}}
+                                {% endif %}
+                            </div>
+                            <form type="POST" method="post" action="{% url 'seller_add_product' %}" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <ul class="add-label-input">
+                                    <li>
+                                        <label>Product Name</label>
+                                        <input type="text" name="product_name" placeholder="Enter Product Name">
+                                    </li>
+                                    <li>
+                                        <label>Product Price</label>
+                                        <input type="text" name="product_price" placeholder="Enter Product Price">
+                                    </li>
+                                </ul>
+                                <ul class="add-label-input">
+                                    <li>
+                                        <label>Upload Product Photo
+                                        <input type="file" name="product_image">
+                                    </li>
+                                </ul>
+                                <ul class="add-label-input">
+                                    <li>
+                                        <label>Enter Product Description</label>
+                                        <textarea style="margin-top: 10px;" type="text" cols="161" row="150" name="product_desc" placeholder="Enter Product Description"></textarea>
+                                    </li>
+                                </ul>
+                                <ul class="pro-submit">
+                                    <li>
+                                        <input type="submit" name="action" value="Upload Product" class="btn btn-style1">
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- order history end -->
+    
+    <!-- footer start -->
+    <section class="footer-one section-tb-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="f-logo">
+                        <ul class="footer-ul">
+                            <li class="footer-li footer-logo">
+                                <a href="#">
+                                    <img class="img-fluid" src="{% static 'image/logo1.png' %}" alt="">
+                                </a>
+                            </li>
+                            <li class="footer-li footer-address">
+                                <ul class="f-ul-li-ul">
+                                    <li class="footer-icon">
+                                        <i class="fa-solid fa-map fa-3x"></i>
+                                    </li>
+                                    <li class="footer-info">
+                                        <h6>Address</h6>
+                                        <span>401 Broadway 24th floor</span>
+                                        <span>Near ant mall cross road</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer-li footer-contact">
+                                <ul class="f-ul-li-ul">
+                                    <li class="footer-icon">
+                                        <i class="fa-solid fa-phone fa-3x"></i>
+                                    </li>
+                                    <li class="footer-info">
+                                        <h6>Contact</h6>
+                                        <a href="tel:#">Phone: 1-800-222-000</a>
+                                        <a href="mailto:#">Email: demo@demo.com</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer-li footer-address">
+                                <ul class="f-ul-li-ul">
+                                    <li class="footer-icon">
+                                        <i class="fa-solid fa-circle-question fa-3x"></i>
+                                    </li>
+                                    <li class="footer-info">
+                                        <h6>Help</h6>
+                                        <span>Lorem ipsum is simply</span>
+                                        <span>Dummy the printing</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer end -->
+   
+    <!-- footer copyright start -->
+    <section class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul class="f-bottom">
+                        <li class="f-c f-copyright">
+                            <p>Copyright <i class="fa fa-copyright"></i> 2021 spacingtech</p>
+                        </li>
+                        <li class="f-c f-social">
+                            
+                        </li>
+                        <li class="f-c f-payment">
+                            <img src="{% static 'image/payment.png' %}" class="img-fluid" alt="payment image">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer copyright end -->
+
+    <!-- back to top start -->
+    <a href="javascript:void(0)" class="scroll" id="top">
+        <span><i class="fa fa-angle-double-up"></i></span>
+    </a>
+    <!-- back to top end -->
+    <div class="mm-fullscreen-bg"></div>
+    <!-- jquery -->
+    <script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <!-- bootstrap -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- popper -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- fontawesome -->
+    <script src="{% static 'js/fontawesome.min.js' %}"></script>
+    <!-- owl carousal -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- swiper -->
+    <script src="{% static 'js/swiper.min.js' %}"></script>
+    <!-- custom -->
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>
+{% endblock %}
